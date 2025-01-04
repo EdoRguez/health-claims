@@ -15,11 +15,15 @@ export type Category =
   | 'Cognition'
   | 'Motivation'
   | 'Recovery'
-  | 'Mental Health';
+  | 'Mental Health'
+  | 'Fitness'
+  | 'Medicine';
 
 export type VerificationStatus = 'All Statuses' | 'Verified' | 'Questionable' | 'Debunked';
 
 export type SortOption = 'Date' | 'Trust Score';
+
+export type Trend = 'up' | 'down' | 'stable';
 
 export interface Claim {
   id: string;
@@ -51,14 +55,13 @@ export interface Influencer {
   expertise: any[];
   category: any;
   trustScore: number;
-  trend: string;
+  trend: Trend;
   verifiedClaims: number;
   yearlyRevenue: string;
   recommendedProducts: Product[];
   followers: string;
   claims: Claim[];
 }
-
 
 export interface LeaderboardStats {
   activeInfluencers: number;
