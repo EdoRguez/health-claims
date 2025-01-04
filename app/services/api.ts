@@ -1,4 +1,4 @@
-import { Category, Influencer, LeaderboardStats } from "../types/influencer";
+import { Category, Influencer, LeaderboardStats } from "@/app/types/influencer";
 import { ResearchConfig } from "../types/research";
 
 // const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -48,61 +48,235 @@ const dummyStats: LeaderboardStats = {
 };
 
 // Dummy data for influencers
+// Dummy data for influencers
 const dummyInfluencers: Influencer[] = [
   {
     id: '1',
+    name: 'Andrew Huberman',
     rank: 1,
-    name: 'Dr. Peter Attia',
-    avatar: '/avatars/peter-attia.jpg',
-    category: 'Medicine',
-    trustScore: 94,
+    avatar: '/avatars/andrew-huberman.jpg',
+    category: 'Neuroscience',
+    bio: 'Stanford Professor of Neurobiology and Ophthalmology, focusing on neural development, brain plasticity, and neural regeneration. Host of the Huberman Lab Podcast, translating neuroscience into practical tools for everyday life. Known for evidence-based approaches to performance, sleep, stress management, and brain optimization.',
+    expertise: [
+      'Neuroscience',
+      'Sleep',
+      'Performance',
+      'Hormones',
+      'Stress Management',
+      'Exercise Science',
+      'Light Exposure',
+      'Circadian Biology'
+    ],
+    trustScore: 89,
+    verifiedClaims: 127,
     trend: 'up',
-    followers: '1.2M+',
-    verifiedClaims: 203,
+    yearlyRevenue: '$5.0M',
+    recommendedProducts: [
+      {
+        id: 'p1',
+        name: 'AG1 Athletic Greens',
+        description: 'Comprehensive nutritional supplement',
+        url: 'https://athleticgreens.com',
+        type: 'Supplement',
+        price: '$99/month'
+      }
+    ],
+    followers: '4.2M+',
+    claims: [
+      {
+        id: 'c1',
+        title: 'Viewing sunlight within 30-60 minutes of waking enhances cortisol release',
+        date: '14/01/2024',
+        status: 'Verified',
+        trustScore: 92,
+        category: 'Light Exposure',
+        aiAnalysis: 'Multiple studies confirm morning light exposure affects cortisol rhythms. Timing window supported by research.',
+        sourceUrl: 'https://example.com/source',
+        researchUrl: 'https://example.com/research'
+      },
+      {
+        id: 'c2',
+        title: 'Non-sleep deep rest (NSDR) protocols can accelerate learning and recovery',
+        date: '09/12/2023',
+        status: 'Verified',
+        trustScore: 88,
+        category: 'Sleep',
+        aiAnalysis: 'Research supports the use of NSDR techniques for enhanced learning consolidation and recovery.',
+        sourceUrl: 'https://example.com/source2',
+        researchUrl: 'https://example.com/research2'
+      }
+    ]
   },
   {
     id: '2',
-    rank: 2,
-    name: 'Dr. Rhonda Patrick',
-    avatar: '/avatars/rhonda-patrick.jpg',
-    category: 'Nutrition',
-    trustScore: 91,
-    trend: 'up',
-    followers: '980K+',
-    verifiedClaims: 156,
-  },
-  {
-    id: '3',
-    rank: 3,
-    name: 'Dr. Chris Palmer',
-    avatar: '/avatars/chris-palmer.jpg',
-    category: 'Mental Health',
-    trustScore: 90,
-    trend: 'up',
-    followers: '180K+',
-    verifiedClaims: 76,
-  },
-  {
-    id: '4',
-    rank: 4,
     name: 'Andrew Huberman',
+    rank: 1,
     avatar: '/avatars/andrew-huberman.jpg',
     category: 'Neuroscience',
+    bio: 'Stanford Professor of Neurobiology and Ophthalmology, focusing on neural development, brain plasticity, and neural regeneration. Host of the Huberman Lab Podcast, translating neuroscience into practical tools for everyday life. Known for evidence-based approaches to performance, sleep, stress management, and brain optimization.',
+    expertise: [
+      'Neuroscience',
+      'Sleep',
+      'Performance',
+      'Hormones',
+      'Stress Management',
+      'Exercise Science',
+      'Light Exposure',
+      'Circadian Biology'
+    ],
     trustScore: 89,
-    trend: 'up',
-    followers: '4.2M+',
     verifiedClaims: 127,
+    trend: 'up',
+    yearlyRevenue: '$5.0M',
+    recommendedProducts: [
+      {
+        id: 'p1',
+        name: 'AG1 Athletic Greens',
+        description: 'Comprehensive nutritional supplement',
+        url: 'https://athleticgreens.com',
+        type: 'Supplement',
+        price: '$99/month'
+      }
+    ],
+    followers: '4.2M+',
+    claims: [
+      {
+        id: 'c1',
+        title: 'Viewing sunlight within 30-60 minutes of waking enhances cortisol release',
+        date: '14/01/2024',
+        status: 'Verified',
+        trustScore: 92,
+        category: 'Light Exposure',
+        aiAnalysis: 'Multiple studies confirm morning light exposure affects cortisol rhythms. Timing window supported by research.',
+        sourceUrl: 'https://example.com/source',
+        researchUrl: 'https://example.com/research'
+      },
+      {
+        id: 'c2',
+        title: 'Non-sleep deep rest (NSDR) protocols can accelerate learning and recovery',
+        date: '09/12/2023',
+        status: 'Verified',
+        trustScore: 88,
+        category: 'Sleep',
+        aiAnalysis: 'Research supports the use of NSDR techniques for enhanced learning consolidation and recovery.',
+        sourceUrl: 'https://example.com/source2',
+        researchUrl: 'https://example.com/research2'
+      }
+    ]
   },
-  {
-    id: '5',
-    rank: 5,
-    name: 'Dr. Dominic D\'Agostino',
-    avatar: '/avatars/dominic-dagostino.jpg',
-    category: 'Nutrition',
+    {
+    id: '3',
+    name: 'Andrew Huberman',
+    rank: 1,
+    avatar: '/avatars/andrew-huberman.jpg',
+    category: 'Neuroscience',
+    bio: 'Stanford Professor of Neurobiology and Ophthalmology, focusing on neural development, brain plasticity, and neural regeneration. Host of the Huberman Lab Podcast, translating neuroscience into practical tools for everyday life. Known for evidence-based approaches to performance, sleep, stress management, and brain optimization.',
+    expertise: [
+      'Neuroscience',
+      'Sleep',
+      'Performance',
+      'Hormones',
+      'Stress Management',
+      'Exercise Science',
+      'Light Exposure',
+      'Circadian Biology'
+    ],
     trustScore: 89,
-    trend: 'down',
-    followers: '250K+',
-    verifiedClaims: 112,
+    verifiedClaims: 127,
+    trend: 'up',
+    yearlyRevenue: '$5.0M',
+    recommendedProducts: [
+      {
+        id: 'p1',
+        name: 'AG1 Athletic Greens',
+        description: 'Comprehensive nutritional supplement',
+        url: 'https://athleticgreens.com',
+        type: 'Supplement',
+        price: '$99/month'
+      }
+    ],
+    followers: '4.2M+',
+    claims: [
+      {
+        id: 'c1',
+        title: 'Viewing sunlight within 30-60 minutes of waking enhances cortisol release',
+        date: '14/01/2024',
+        status: 'Verified',
+        trustScore: 92,
+        category: 'Light Exposure',
+        aiAnalysis: 'Multiple studies confirm morning light exposure affects cortisol rhythms. Timing window supported by research.',
+        sourceUrl: 'https://example.com/source',
+        researchUrl: 'https://example.com/research'
+      },
+      {
+        id: 'c2',
+        title: 'Non-sleep deep rest (NSDR) protocols can accelerate learning and recovery',
+        date: '09/12/2023',
+        status: 'Verified',
+        trustScore: 88,
+        category: 'Sleep',
+        aiAnalysis: 'Research supports the use of NSDR techniques for enhanced learning consolidation and recovery.',
+        sourceUrl: 'https://example.com/source2',
+        researchUrl: 'https://example.com/research2'
+      }
+    ]
+  },
+    {
+    id: '4',
+    name: 'Andrew Huberman',
+    rank: 1,
+    avatar: '/avatars/andrew-huberman.jpg',
+    category: 'Neuroscience',
+    bio: 'Stanford Professor of Neurobiology and Ophthalmology, focusing on neural development, brain plasticity, and neural regeneration. Host of the Huberman Lab Podcast, translating neuroscience into practical tools for everyday life. Known for evidence-based approaches to performance, sleep, stress management, and brain optimization.',
+    expertise: [
+      'Neuroscience',
+      'Sleep',
+      'Performance',
+      'Hormones',
+      'Stress Management',
+      'Exercise Science',
+      'Light Exposure',
+      'Circadian Biology'
+    ],
+    trustScore: 89,
+    verifiedClaims: 127,
+    trend: 'up',
+    yearlyRevenue: '$5.0M',
+    recommendedProducts: [
+      {
+        id: 'p1',
+        name: 'AG1 Athletic Greens',
+        description: 'Comprehensive nutritional supplement',
+        url: 'https://athleticgreens.com',
+        type: 'Supplement',
+        price: '$99/month'
+      }
+    ],
+    followers: '4.2M+',
+    claims: [
+      {
+        id: 'c1',
+        title: 'Viewing sunlight within 30-60 minutes of waking enhances cortisol release',
+        date: '14/01/2024',
+        status: 'Verified',
+        trustScore: 92,
+        category: 'Light Exposure',
+        aiAnalysis: 'Multiple studies confirm morning light exposure affects cortisol rhythms. Timing window supported by research.',
+        sourceUrl: 'https://example.com/source',
+        researchUrl: 'https://example.com/research'
+      },
+      {
+        id: 'c2',
+        title: 'Non-sleep deep rest (NSDR) protocols can accelerate learning and recovery',
+        date: '09/12/2023',
+        status: 'Verified',
+        trustScore: 88,
+        category: 'Sleep',
+        aiAnalysis: 'Research supports the use of NSDR techniques for enhanced learning consolidation and recovery.',
+        sourceUrl: 'https://example.com/source2',
+        researchUrl: 'https://example.com/research2'
+      }
+    ]
   },
 ];
 

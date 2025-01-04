@@ -1,22 +1,25 @@
 export type Category =
   | 'All'
-  | 'Nutrition'
-  | 'Fitness'
-  | 'Medicine'
-  | 'Mental Health'
+  | 'All Categories'
   | 'Neuroscience'
-  | 'Longevity'
   | 'Sleep'
   | 'Performance'
   | 'Hormones'
   | 'Stress Management'
   | 'Exercise Science'
   | 'Light Exposure'
-  | 'Circadian Biology';
+  | 'Circadian Biology'
+  | 'Nutrition'
+  | 'Exercise'
+  | 'Stress'
+  | 'Cognition'
+  | 'Motivation'
+  | 'Recovery'
+  | 'Mental Health';
 
-export type VerificationStatus = 'All' | 'Verified' | 'Questionable' | 'Debunked';
+export type VerificationStatus = 'All Statuses' | 'Verified' | 'Questionable' | 'Debunked';
 
-export type Trend = 'up' | 'down' | 'stable';
+export type SortOption = 'Date' | 'Trust Score';
 
 export interface Claim {
   id: string;
@@ -24,28 +27,38 @@ export interface Claim {
   date: string;
   status: VerificationStatus;
   trustScore: number;
-  category: Category;
-  aiAnalysis?: string;
-  sourceUrl?: string;
-  researchUrl?: string;
+  category: any;
+  aiAnalysis: string;
+  sourceUrl: string;
+  researchUrl: string;
+}
+
+export interface Product {
+  id: string;
+  name: string;
+  description: string;
+  url: string;
+  type: string;
+  price?: string;
 }
 
 export interface Influencer {
   id: string;
-  rank?: number;
   name: string;
+  rank: number;
   avatar: string;
-  category: Category;
-  bio?: string;
-  expertise?: string[];
+  bio: string;
+  expertise: any[];
+  category: any;
   trustScore: number;
-  trend: Trend;
-  followers: string;
+  trend: string;
   verifiedClaims: number;
-  yearlyRevenue?: string;
-  recommendedProducts?: number;
-  claims?: Claim[];
+  yearlyRevenue: string;
+  recommendedProducts: Product[];
+  followers: string;
+  claims: Claim[];
 }
+
 
 export interface LeaderboardStats {
   activeInfluencers: number;
